@@ -1,4 +1,5 @@
-# demo
-This is a demo readme file
+# exercise
 
+这是一个100天坚持刷题的仓库，希望能坚持下去，冲冲冲！！！
+                                                         2020/1/13
 -------
