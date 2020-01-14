@@ -40,7 +40,7 @@ int main()
     {
         if(a[i]>ave)
         {
-            d = sum[i]-ave*i;
+            d = a[i]-ave;
             a[i]-=d;
          //   sum[i]-=d;     与上同理
             a[i-1]+=d;
