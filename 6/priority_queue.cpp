@@ -4,7 +4,7 @@ using namespace std;
 priority_queue<int,vector<int>,greater<int> > que;
 
 priority_queue<int> a; //默认降序
-    //等同于 priority_queue<int, vector<int>, less<int> > a;
+//等同于 priority_queue<int, vector<int>, less<int> > a;
 priority_queue<string> b;
 
 const int N=100001;
