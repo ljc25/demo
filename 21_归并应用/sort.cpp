@@ -48,6 +48,8 @@ int main()
 
         sort(pl,pl+N*2,cmp);
     }
+    for(int i =0;i<2*N;i++)
+        cout << pl[i].id << " ";
     cout << pl[Q-1].id;
     return 0;
 }

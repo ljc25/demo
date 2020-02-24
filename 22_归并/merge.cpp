@@ -3,40 +3,42 @@
 
 using namespace std;
 
-int temp[1000000]; // 临时数组
+int temp[1000]; // 临时数组
 
-void merge_sort(int arr[],int left,int mid,int right)
+void merge_sort(int a[], int left, int mid, int right)
 {
     memset(temp,0,sizeof(int));
-    int k = 0;
-    int i = left,j = mid;
-    while(i<mid&& j<=right)
+    int td = 0;
+    int x = left, y = mid + 1;
+    while (x <= mid && y <=right)
     {
-        if(arr[i]<=arr[j])
-            temp[k++]=arr[i++];
+        if (a[x] < a[y])
+            temp[td++] = a[x++];
         else
-            temp[k++]=arr[j++];
+            temp[td++] = a[y++];
     }
-    //注意这一句和下面一句一次只合并会有其中一个执行
-    //把剩下的没放完的一边也扔进b里面
-    while(j<=right) temp[k++]=arr[j++];
-    while(i<mid) temp[k++]=arr[i++];
-    for(int i = left;i<=right;i++)
-    arr[i] = temp[i-left];
+    while (x <= mid)
+        temp[td++] = a[x++];
+    while (y <= right)
+        temp[td++] = a[y++];
+    for (int i = left; i <= right; i++)
+        a[i] = temp[i-left];
 }
 
-void sort(int arr[],int start,int end)
+void merge(int a[], int left, int right)
 {
-    if(start == end) return; // 拆到最小不能再拆
-    int mid = (start + end) / 2;
-    sort(arr,start,mid); //拆左边
-    sort(arr,mid+1,end); //拆右边
-    merge_sort(arr,start,mid+1,end); //合并
+    if (left == right) return;
+    int mid = (left + right) / 2;
+    merge(a, left, mid);
+    merge(a, mid + 1, right);
+    merge_sort(a, left, mid, right);
 }
 
 int main()
 {
-    int arr[] = {9,2,4,1,5,6,3,7};
-    int n = 8;
-    sort(arr,1,n);
+    int a[7] = {1, 5, 2, 3, 7, 4, 1};
+    merge(a, 0, 6);
+    for (int i = 0; i < 7; i++)
+        cout << a[i] << " ";
+    return 0;
 }
