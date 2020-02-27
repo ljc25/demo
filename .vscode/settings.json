@@ -53,7 +53,8 @@
             "xfacet": "cpp",
             "xlocinfo": "cpp",
             "xtr1common": "cpp",
-            "random": "cpp"
+            "random": "cpp",
+            "*.tcc": "cpp"
         },
     "spellright.language": [
         "en"
