@@ -1,5 +1,6 @@
 {
         "files.associations": {
+            "*.html": "html",
             "cmath": "c",
             "list": "cpp",
             "utility": "cpp",
@@ -54,7 +55,8 @@
             "xlocinfo": "cpp",
             "xtr1common": "cpp",
             "random": "cpp",
-            "*.tcc": "cpp"
+            "*.tcc": "cpp",
+            "complex": "cpp"
         },
     "spellright.language": [
         "en"
