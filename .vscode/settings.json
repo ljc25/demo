@@ -56,7 +56,9 @@
             "xtr1common": "cpp",
             "random": "cpp",
             "*.tcc": "cpp",
-            "complex": "cpp"
+            "complex": "cpp",
+            "sstream": "cpp",
+            "regex": "cpp"
         },
     "spellright.language": [
         "en"
