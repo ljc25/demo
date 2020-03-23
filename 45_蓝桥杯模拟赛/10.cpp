@@ -1,3 +1,34 @@
+#include<bits/stdc++.h>
+using namespace std;
+
+const int N=100005;
+int n,m,value;
+struct show{						
+	int pos,value;
+	show(){}
+	show(int a,int b):pos(a),value(b){}
+};
+show p[N];
+bool cmp1(show p1,show p2)	//设置的排序规则1：按节目好看程度降序排序 
+{ return p1.value>p2.value; }
+bool cmp2(show p1,show p2)	//设置的排序规则2：按节目的序号升序排序 
+{ return p1.pos<p2.pos; }
+
+int main()
+{
+	cin>>n>>m;
+	for(int i=0;i<n;i++){
+		cin>>value;
+		p[i]=show(i,value);
+	}
+	sort(p,p+n,cmp1);				//第一次针对节目的好看程度进行降序排序 
+	sort(p,p+m,cmp2);				//第二次针对前面最好看的m个节目的序号进行升序排序 
+	for(int i=0;i<m;i++)
+		cout<<p[i].value<<" ";
+	return 0;
+}
+
+/*  这个代码可能有问题
 #include <bits/stdc++.h>
 
 using namespace std;
@@ -45,4 +76,5 @@ int main()
         }
     }
     return 0;
-}
+} */
+
