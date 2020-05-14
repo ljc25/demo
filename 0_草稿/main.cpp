@@ -2,26 +2,20 @@
 
 using namespace std;
 
-int count1;  //记录符合答案数
-
-bool judge(int x)
-{
-	while(x)
-	{
-		/* y = x%10; */
-		if(x%10==9) return true;
-		x /= 10;
+int N;    //高校数
+int sum = 1;
+int n[120];
+int main(){
+	cin >> N;
+	for(int i = 1;i<=N;i++){
+		cin >> n[i];
 	}
-	return false;
-}
-int main()
-{
-	for(int i = 1;i<=2019;i++)
-		if(judge(i)) count1++;
-	cout << count1 << endl;
-	int a[3]={1,2,3};
-	int minx = *max_element(a,a+3);
-	int maxx = *min_element(a,a+3);
-	cout << minx << " " << maxx;
+
+	for(int i = 1;i<=N;i++){
+		cout << "#"<<i << endl;
+		for(int j = 1;j<=n[i];j++){
+			
+		}
+	}
 	return 0;
 }
