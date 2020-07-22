@@ -40,8 +40,12 @@ int main(){
     }
     for (int i = n; i > 0; i--)
         scanf("%d",&b[i]);
-    getchar();
-    cin >> d;
+    /* getchar();
+    cin >> d; */
+    do
+	{
+		d=getchar();//输入运算符号 
+	}while(d!='+'&&d!='-');
     for (int i = n; i > 0; i--)
         scanf("%d",&c[i]);
     (d=='+')?add():sub();
