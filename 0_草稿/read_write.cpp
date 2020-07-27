@@ -23,10 +23,9 @@ inline void write(int x){
     int tmp = (x>0)?x:-x;
     if(x<0) putchar('-');
     int cnt = 0;
-    while(tmp > 0){
+    while(tmp > 0){ 
         F[cnt++] = tmp % 10 + '0';
         tmp /= 10;
-
     }
     while(cnt>0){
         putchar(F[--cnt]);
