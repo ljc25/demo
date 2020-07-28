@@ -1,3 +1,4 @@
+/* P1591 阶乘数码 */
 #include <bits/stdc++.h>
 
 using namespace std;

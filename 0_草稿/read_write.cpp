@@ -12,24 +12,17 @@ inline int read(){
         ch = getchar();
     }
     while(ch>='0'&&ch<='9'){
-        x = (x<<1) + (x<<3) + ch^48;
+        x = (x<<1) + (x<<3) + (ch^48);
         ch = getchar();
     }
     return f*x;
 }
 
-inline void write(int x){
-    char F[200];
-    int tmp = (x>0)?x:-x;
-    if(x<0) putchar('-');
-    int cnt = 0;
-    while(tmp > 0){ 
-        F[cnt++] = tmp % 10 + '0';
-        tmp /= 10;
-    }
-    while(cnt>0){
-        putchar(F[--cnt]);
-    }
+void write(int a)
+{
+    if(a<0) putchar('-'),a=-a;
+    if(a>=10)write(a/10);
+    putchar(a%10+48);
 }
 
 int main(){
