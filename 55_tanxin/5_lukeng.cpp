@@ -6,7 +6,7 @@ using namespace std;
 int n,m;
 int a[15005],b[15005],ans;
 
-bool cmp(int k,int h){\
+bool cmp(int k,int h){
 	return k>h;
 }
 
