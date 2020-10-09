@@ -1,22 +1,48 @@
-#include<bits/stdc++.h>
-using namespace std;
-int W,ans=0;
-int n,a[30001];
-int l,r,i;
-int main()
+#include <stdio.h>
+#include <stdlib.h>
+
+
+int partition(int *a, int left, int right)
 {
-    scanf("%d%d",&W,&n);
-    for(i=1;i<=n;i++)
-      scanf("%d",&a[i]);
-    sort(a+1,a+n+1);
-    l=1;  r=n;
-    while(l<=r)
+    int x = a[left];
+    while (left < right)
     {
-        if(a[l]+a[r]<=W)
-          l++,r--,ans++;
-        else
-          r--,ans++;
+        while (a[right] >= x && right > left)
+            right--;
+        a[left] = a[right];
+        while (a[left] <= x && left < right)
+            left++;
+        a[right] = a[left];
     }
-    printf("%d",ans);
+    a[left] = x;
+    return left;
+}
+int find(int *a, int left, int right, int k)
+{
+    int temp = partition(a, left, right);
+    if( k - 1 == temp)
+        printf("%d", a[k - 1]);
+    else if (k - 1 < temp)
+    {
+        find(a, left, temp - 1, k);
+    }
+    else if(k - 1 > temp )
+    {
+        find(a, temp + 1, right, k);
+    }
+    return 0;
+}
+int main(int argc, const char *argv[])
+{
+    // insert code here...
+    int n, k;
+    scanf("%d %d", &n, &k);
+    int *a = (int *)malloc(n * (sizeof(int *)));
+    int i, f;
+    for (i = 0; i < n; i++)
+    {
+        scanf("%d", &a[i]);
+    };
+    find(a, 0, n - 1, k);
     return 0;
 }
