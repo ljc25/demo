@@ -9,7 +9,8 @@ int a[12],book[12];
 void dfs(int x){
 	if(x>n){
 		for(int i = 1;i<=n;i++){
-			printf("%5d",a[i]);
+			// printf("%5d",a[i]);
+			printf("%d", a[i]);
 		}
 		printf("\n");
 		return;
