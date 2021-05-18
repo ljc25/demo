@@ -1,24 +1,32 @@
+/* #include <iostream.h>
+#include <ctime>
+#include <cstdlib>
+#include <stdio.h>
+#include <time.h>
+#include <stdlib.h>
+#include <math.h> */
 #include <bits/stdc++.h>
+
 using namespace std;
 
-map<int,int> a;
-
-int dfs(int x){
-    if(x==1) return 1;
-    if(x==2) return 2;
-    if(a.find(x)!=a.end()) return a[x];
-    else {
-        int value = dfs(x-1) + dfs(x-2);
-        a[x]=value;
-        return value;
-    }
-}
-
-int main()
-{
-    int n;
-    cin >> n;
-    int ans = dfs(n);
-    cout << ans;
-    return 0;
+int main(){
+	clock_t start,end;
+	long times;
+	long long x,e,n;
+	cout<<"随机产生3个大数:"<<endl;
+	//x=1000*(rand()%11)+100*(rand()%11)+10*(rand()%11)+rand()%11;
+	x=1000000*(rand()%11)+100000*(rand()%11)+10000*(rand()%11)+1000*(rand()%11)+
+		100*(rand()%11)+10*(rand()%11)+rand()%11;
+	e=1000000*(rand()%11)+100000*(rand()%11)+10000*(rand()%11)+1000*(rand()%11)+
+		100*(rand()%11)+10*(rand()%11)+rand()%11;
+	n=1000000*(rand()%11)+100000*(rand()%11)+10000*(rand()%11)+1000*(rand()%11)+
+		100*(rand()%11)+10*(rand()%11)+rand()%11;
+	cout<<"x="<<x<<"  e="<<e<<"  n="<<n<<endl;
+	start=clock();
+	cout<<"pow(x,e):" << pow(x,e)<<endl;
+	long answer=(int)pow(x,e)%n;		//指数运算
+	end=clock();
+	times=1000*(end-start);
+	cout<<"花费的时间为:"<<times<<endl;
+	return 0;
 }
